@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Bakery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f5f1;
+overflow-x:hidden;
+color:#222;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:35px;
+font-weight:800;
+color:#d97706;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+font-weight:500;
+font-size:17px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.slides{
+position:relative;
+width:100%;
+height:100%;
+}
+
+.slide{
+position:absolute;
+inset:0;
+opacity:0;
+animation:slideShow 18s infinite;
+}
+
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:6s;}
+.slide:nth-child(3){animation-delay:12s;}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(50%);
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.2));
+}
+
+.slide-content{
+position:absolute;
+top:50%;
+left:8%;
+transform:translateY(-50%);
+color:white;
+z-index:5;
+max-width:700px;
+}
+
+.slide-content h1{
+font-size:85px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.slide-content p{
+font-size:25px;
+line-height:1.6;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:16px 40px;
+background:#ff9800;
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+@keyframes slideShow{
+
+0%{
+opacity:0;
+transform:scale(1.08);
+}
+
+10%{
+opacity:1;
+transform:scale(1);
+}
+
+30%{
+opacity:1;
+transform:scale(1);
+}
+
+40%{
+opacity:0;
+transform:scale(1.05);
+}
+
+100%{
+opacity:0;
+}
+}
+
+/* SECTION */
+
+section{
+padding:110px 7%;
+}
+
+.title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.title h2{
+font-size:55px;
+color:#d97706;
+margin-bottom:15px;
+}
+
+.title p{
+font-size:20px;
+color:#666;
+}
+
+/* PRODUCTS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+}
+
+.card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card-content h3{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.price{
+color:#ff9800;
+font-size:26px;
+font-weight:700;
+}
+
+/* ABOUT */
+
+.about{
+display:flex;
+gap:60px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.about img{
+width:500px;
+max-width:100%;
+border-radius:25px;
+}
+
+.about-text{
+flex:1;
+}
+
+.about-text h2{
+font-size:55px;
+margin-bottom:25px;
+color:#d97706;
+}
+
+.about-text p{
+font-size:20px;
+line-height:1.8;
+color:#555;
+}
+
+/* STATS */
+
+.stats{
+background:linear-gradient(135deg,#ff9800,#d97706);
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+text-align:center;
+color:white;
+}
+
+.stat h3{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.stat p{
+font-size:22px;
+}
+
+/* REVIEWS */
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.review{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.review h3{
+margin-bottom:15px;
+font-size:24px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+padding:70px 7%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-grid h3{
+font-size:28px;
+margin-bottom:20px;
+color:#ff9800;
+}
+
+.footer-grid p{
+line-height:1.8;
+color:#ccc;
+}
+
+.copy{
+text-align:center;
+margin-top:50px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.1);
+color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+}
+
+.slide-content h1{
+font-size:45px;
+}
+
+.slide-content p{
+font-size:18px;
+}
+
+.title h2,
+.about-text h2{
+font-size:38px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Prince Bakery</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="slides">
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600">
+<div class="overlay"></div>
+
+<div class="slide-content">
+<h1>Freshly Baked Every Day</h1>
+<p>Premium cakes, pastries and bakery items prepared fresh with love.</p>
+<a href="#" class="btn">Order Now</a>
+</div>
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=1600">
+<div class="overlay"></div>
+
+<div class="slide-content">
+<h1>Custom Birthday Cakes</h1>
+<p>Beautiful custom cakes for birthdays and celebrations.</p>
+<a href="#" class="btn">Explore Cakes</a>
+</div>
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?q=80&w=1600">
+<div class="overlay"></div>
+
+<div class="slide-content">
+<h1>Best Bakery In Town</h1>
+<p>Fresh taste and unforgettable bakery experience.</p>
+<a href="#" class="btn">Visit Us</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="products">
+
+<div class="title">
+<h2>Our Special Cakes</h2>
+<p>Freshly baked with premium ingredients</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000">
+<div class="card-content">
+<h3>Chocolate Cake</h3>
+<div class="price">₹499</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000">
+<div class="card-content">
+<h3>Strawberry Cake</h3>
+<div class="price">₹699</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1000">
+<div class="card-content">
+<h3>Donuts</h3>
+<div class="price">₹149</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1200">
+
+<div class="about-text">
+<h2>Why Choose Prince Bakery?</h2>
+<p>
+Prince Bakery is known for premium quality cakes, pastries and fresh bakery products.
+We make custom birthday cakes, anniversary cakes and special celebration cakes with hygiene and perfection.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h3>10K+</h3>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat">
+<h3>500+</h3>
+<p>Custom Cakes</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Fresh Quality</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Support</p>
+</div>
+
+</section>
+
+<section>
+
+<div class="title">
+<h2>Customer Reviews</h2>
+<p>What our customers say</p>
+</div>
+
+<div class="review-grid">
+
+<div class="review">
+<h3>Rahul Sharma</h3>
+<p>Best bakery in town. Cake quality and taste are amazing.</p>
+</div>
+
+<div class="review">
+<h3>Priya Singh</h3>
+<p>Beautiful custom birthday cakes and very fast service.</p>
+</div>
+
+<div class="review">
+<h3>Aman Verma</h3>
+<p>Fresh pastries and premium quality bakery items.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="title">
+<h2>Our Gallery</h2>
+<p>Fresh cakes made with love</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=1000">
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+<h3>Prince Bakery</h3>
+<p>Fresh cakes, pastries and bakery items with premium quality and taste.</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>
+📞 +91 9999999999<br><br>
+📍 Your City<br><br>
+✉ princebakery@gmail.com
+</p>
+</div>
+
+<div>
+<h3>Opening Hours</h3>
+<p>
+Monday - Sunday<br><br>
+8:00 AM - 10:00 PM
+</p>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 Prince Bakery | All Rights Reserved
+</div>
+
+</footer>
+
+</body>
+</html>
