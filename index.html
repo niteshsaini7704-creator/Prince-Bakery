@@ -130,30 +130,11 @@ font-weight:600;
 }
 
 @keyframes slideShow{
-
-0%{
-opacity:0;
-transform:scale(1.08);
-}
-
-10%{
-opacity:1;
-transform:scale(1);
-}
-
-30%{
-opacity:1;
-transform:scale(1);
-}
-
-40%{
-opacity:0;
-transform:scale(1.05);
-}
-
-100%{
-opacity:0;
-}
+0%{ opacity:0; transform:scale(1.08); }
+10%{ opacity:1; transform:scale(1); }
+30%{ opacity:1; transform:scale(1); }
+40%{ opacity:0; transform:scale(1.05); }
+100%{ opacity:0; }
 }
 
 /* SECTION */
@@ -214,33 +195,48 @@ flex-grow:1;
 }
 
 .card-content h3{
-font-size:24px;
-margin-bottom:8px;
+font-size:22px;
+margin-bottom:15px;
 color:#222;
 }
 
-.weight{
-font-size:15px;
-color:#777;
-margin-bottom:15px;
-font-weight:500;
+/* Pricing and Weight Box Design */
+.price-weight-box {
+background: #fffaf0;
+border: 1px dashed #ff9800;
+padding: 12px;
+border-radius: 12px;
+margin-bottom: 20px;
+}
+
+.weight-option {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 15px;
+color: #555;
+margin-bottom: 6px;
+}
+
+.weight-option:last-child {
+margin-bottom: 0;
+}
+
+.weight-option span.price-tag {
+color: #ff9800;
+font-weight: 700;
+font-size: 17px;
 }
 
 .card-footer{
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
 align-items:center;
 margin-top:auto;
 }
 
-.price{
-color:#ff9800;
-font-size:24px;
-font-weight:700;
-}
-
 .order-btn{
-padding:10px 20px;
+padding:10px 25px;
 background:#ff9800;
 color:white;
 border-radius:30px;
@@ -381,24 +377,19 @@ color:#aaa;
 /* MOBILE */
 
 @media(max-width:768px){
-
 nav{
 display:none;
 }
-
 .slide-content h1{
 font-size:45px;
 }
-
 .slide-content p{
 font-size:18px;
 }
-
 .title h2,
 .about-text h2{
 font-size:38px;
 }
-
 }
 
 </style>
@@ -407,9 +398,7 @@ font-size:38px;
 <body>
 
 <header>
-
 <div class="logo">Prince Bakery</div>
-
 <nav>
 <ul>
 <li><a href="#">Home</a></li>
@@ -419,48 +408,38 @@ font-size:38px;
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-
 </header>
 
 <section class="hero">
-
 <div class="slides">
-
 <div class="slide">
 <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600">
 <div class="overlay"></div>
-
 <div class="slide-content">
 <h1>Freshly Baked Every Day</h1>
 <p>Premium cakes, pastries and bakery items prepared fresh with love.</p>
 <a href="#products" class="btn">Order Now</a>
 </div>
 </div>
-
 <div class="slide">
 <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=1600">
 <div class="overlay"></div>
-
 <div class="slide-content">
 <h1>Custom Birthday Cakes</h1>
 <p>Beautiful custom cakes for birthdays and celebrations.</p>
 <a href="#products" class="btn">Explore Cakes</a>
 </div>
 </div>
-
 <div class="slide">
 <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?q=80&w=1600">
 <div class="overlay"></div>
-
 <div class="slide-content">
 <h1>Best Bakery In Town</h1>
 <p>Fresh taste and unforgettable bakery experience.</p>
 <a href="#contact" class="btn">Visit Us</a>
 </div>
 </div>
-
 </div>
-
 </section>
 
 <section id="products">
@@ -477,10 +456,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.25 PM.jpeg" alt="Doctor Theme Cake">
 <div class="card-content">
 <h3>Doctor / Medical Theme Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹899</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -491,10 +471,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.12 PM.jpeg" alt="Haldi Ceremony Cake">
 <div class="card-content">
 <h3>Haldi Ceremony Special Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹1,499</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -505,10 +486,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.12 PM.jpeg" alt="Monochromatic Pearl Cake">
 <div class="card-content">
 <h3>Monochromatic Pearl Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹749</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -519,10 +501,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.16 PM.jpeg" alt="Spider-Man Kids Cake">
 <div class="card-content">
 <h3>Spider-Man Kids Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹849</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -533,10 +516,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.14 PM.jpeg" alt="Double Barbie Doll Cake">
 <div class="card-content">
 <h3>Double Barbie Doll Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹1,999</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -547,10 +531,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.16 PM.jpeg" alt="Tic-Tac-Toe Husband Cake">
 <div class="card-content">
 <h3>The Best Husband Tic-Tac-Toe Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹799</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -561,10 +546,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.21 PM.jpeg" alt="Mother's Day Cake">
 <div class="card-content">
 <h3>Happy Mother's Day Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹899</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -575,10 +561,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.22 PM (2).jpeg" alt="Romantic Proposal Cake">
 <div class="card-content">
 <h3>Romantic Couple Proposal Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹949</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -589,10 +576,11 @@ font-size:38px;
 <img src="WhatsApp Image 2026-07-30 at 9.37.13 PM (1).jpeg" alt="Boss Baby Cake">
 <div class="card-content">
 <h3>Boss Baby Theme Cake</h3>
-<div class="weight">Weight: 4.4 Pounds (approx. 2kg)</div>
-<div class="weight">Weight: 2.2 Pounds (approx. 1kg)</div>
+<div class="price-weight-box">
+<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
+<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+</div>
 <div class="card-footer">
-<div class="price">₹1,100</div>
 <a href="#contact" class="order-btn">Book Now</a>
 </div>
 </div>
@@ -603,107 +591,82 @@ font-size:38px;
 </section>
 
 <section id="about">
-
 <div class="about">
-
 <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1200">
-
 <div class="about-text">
 <h2>Why Choose Prince Bakery?</h2>
 <p>
-Prince Bakery is known for premium quality cakes, pastries and fresh bakery products[cite: 3].
+Prince Bakery is known for premium quality cakes, pastries and fresh bakery products.
 We make custom birthday cakes, anniversary cakes and special celebration cakes with hygiene and perfection.
 </p>
 </div>
-
 </div>
-
 </section>
 
 <section class="stats">
-
 <div class="stat">
 <h3>10K+</h3>
 <p>Happy Customers</p>
 </div>
-
 <div class="stat">
 <h3>500+</h3>
 <p>Custom Cakes</p>
 </div>
-
 <div class="stat">
 <h3>100%</h3>
 <p>Fresh Quality</p>
 </div>
-
 <div class="stat">
 <h3>24/7</h3>
 <p>Support</p>
 </div>
-
 </section>
 
 <section>
-
 <div class="title">
 <h2>Customer Reviews</h2>
 <p>What our customers say</p>
 </div>
-
 <div class="review-grid">
-
 <div class="review">
 <h3>Rahul Sharma</h3>
 <p>Best bakery in town. Cake quality and taste are amazing.</p>
 </div>
-
 <div class="review">
 <h3>Priya Singh</h3>
 <p>Beautiful custom birthday cakes and very fast service.</p>
 </div>
-
 <div class="review">
 <h3>Aman Verma</h3>
 <p>Fresh pastries and premium quality bakery items.</p>
 </div>
-
 </div>
-
 </section>
 
 <section id="gallery">
-
 <div class="title">
 <h2>Our Gallery</h2>
 <p>Fresh cakes made with love</p>
 </div>
-
 <div class="gallery">
-
-<img src="" alt"best">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-<img src="" alt="Gallery Cake">
-
+<img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?q=80&w=800" alt="Gallery Cake">
+<img src="https://images.unsplash.com/photo-1557925923-33b23e18fe68?q=80&w=800" alt="Gallery Scale">
+<img src="https://images.unsplash.com/photo-1582234372722-50d7510e7b29?q=80&w=800" alt="Gallery Cake">
 </div>
-
 </section>
 
 <footer id="contact">
-
 <div class="footer-grid">
-
 <div>
 <h3>Prince Bakery</h3>
-<p>Fresh cakes, pastries and bakery items with premium quality and taste[cite: 3].</p>
+<p>Fresh cakes, pastries and bakery items with premium quality and taste.</p>
 </div>
-
 <div>
 <h3>Contact</h3>
 <p>
@@ -712,13 +675,10 @@ We make custom birthday cakes, anniversary cakes and special celebration cakes w
 ✉ prince843949@gmail.com
 </p>
 </div>
-
 </div>
-
 <div class="copy">
 © 2026 Prince Bakery | All Rights Reserved
 </div>
-
 </footer>
 
 </body>
