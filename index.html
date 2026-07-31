@@ -200,7 +200,6 @@ margin-bottom:15px;
 color:#222;
 }
 
-/* Pricing and Weight Box Design */
 .price-weight-box {
 background: #fffaf0;
 border: 1px dashed #ff9800;
@@ -230,24 +229,101 @@ font-size: 17px;
 
 .card-footer{
 display:flex;
-justify-content:flex-end;
+justify-content:center;
 align-items:center;
 margin-top:auto;
 }
 
 .order-btn{
-padding:10px 25px;
-background:#ff9800;
-color:white;
-border-radius:30px;
-text-decoration:none;
-font-size:14px;
-font-weight:600;
-transition:.3s;
+width: 100%;
+text-align: center;
+padding: 12px 15px;
+background: #ff9800;
+color: white;
+border-radius: 30px;
+text-decoration: none;
+font-size: 15px;
+font-weight: 600;
+transition: .3s;
+display: inline-block;
 }
 
 .order-btn:hover{
 background:#d97706;
+}
+
+/* BOOKING FORM SECTION */
+
+.booking-section {
+background: #fff;
+border-radius: 30px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+max-width: 800px;
+margin: 0 auto;
+padding: 50px;
+}
+
+.delivery-notice {
+background: #ffebee;
+color: #c62828;
+border: 1px solid #ef9a9a;
+padding: 12px 20px;
+border-radius: 12px;
+text-align: center;
+font-weight: 600;
+margin-bottom: 25px;
+font-size: 16px;
+}
+
+.booking-form {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+.form-group.full-width {
+grid-column: span 2;
+}
+
+.form-group label {
+font-weight: 600;
+margin-bottom: 8px;
+color: #444;
+}
+
+.form-group input, .form-group select {
+padding: 14px 18px;
+border: 2px solid #eee;
+border-radius: 12px;
+font-size: 16px;
+outline: none;
+transition: 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+border-color: #ff9800;
+}
+
+.submit-btn {
+grid-column: span 2;
+background: #ff9800;
+color: white;
+border: none;
+padding: 16px;
+font-size: 18px;
+font-weight: 700;
+border-radius: 30px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.submit-btn:hover {
+background: #d97706;
 }
 
 /* ABOUT */
@@ -390,9 +466,21 @@ font-size:18px;
 .about-text h2{
 font-size:38px;
 }
+.booking-form {
+grid-template-columns: 1fr;
+}
+.form-group.full-width, .submit-btn {
+grid-column: span 1;
+}
 }
 
 </style>
+
+<script>
+function selectCake(cakeName) {
+document.getElementById('cakeSelect').value = cakeName;
+}
+</script>
 </head>
 
 <body>
@@ -404,7 +492,7 @@ font-size:38px;
 <li><a href="#">Home</a></li>
 <li><a href="#products">Products</a></li>
 <li><a href="#about">About</a></li>
-<li><a href="#gallery">Gallery</a></li>
+<li><a href="#booking">Order Form</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -457,11 +545,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Doctor / Medical Theme Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹899</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹1,699</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Doctor / Medical Theme Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -472,11 +560,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Haldi Ceremony Special Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹1,499</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹2,899</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Haldi Ceremony Special Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -487,11 +575,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Monochromatic Pearl Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹749</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹1,449</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Monochromatic Pearl Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -502,11 +590,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Spider-Man Kids Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹849</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹1,649</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Spider-Man Kids Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -517,11 +605,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Double Barbie Doll Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹1,999</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹3,899</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Double Barbie Doll Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -532,11 +620,11 @@ font-size:38px;
 <div class="card-content">
 <h3>The Best Husband Tic-Tac-Toe Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹799</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹1,549</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('The Best Husband Tic-Tac-Toe Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -547,11 +635,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Happy Mother's Day Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹899</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹1,749</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Happy Mother\'s Day Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -562,11 +650,11 @@ font-size:38px;
 <div class="card-content">
 <h3>Romantic Couple Proposal Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹949</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹1,849</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Romantic Couple Proposal Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
@@ -577,17 +665,79 @@ font-size:38px;
 <div class="card-content">
 <h3>Boss Baby Theme Cake</h3>
 <div class="price-weight-box">
-<div class="weight-option"><span>2.2 Pounds (approx. 1kg):</span> <span class="price-tag">₹600</span></div>
-<div class="weight-option"><span>4.4 Pounds (approx. 2kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>2.2 Pounds (1kg):</span> <span class="price-tag">₹1,100</span></div>
+<div class="weight-option"><span>4.4 Pounds (2kg):</span> <span class="price-tag">₹2,100</span></div>
 </div>
 <div class="card-footer">
-<a href="#contact" class="order-btn">Book Now</a>
+<a href="#booking" onclick="selectCake('Boss Baby Theme Cake')" class="order-btn">Book Now</a>
 </div>
 </div>
 </div>
 
 </div>
 
+</section>
+
+<!-- DIRECT BOOKING FORM SECTION -->
+<section id="booking">
+<div class="title">
+<h2>Quick Cake Booking Form</h2>
+<p>Fill out the details below to place your order directly</p>
+</div>
+
+<div class="booking-section">
+<div class="delivery-notice">
+⚠️ Note: Cake Delivery is currently available ONLY in Gajraula.
+</div>
+
+<form class="booking-form" action="https://formspree.io/f/your-form-id" method="POST">
+<div class="form-group full-width">
+<label>Selected Cake</label>
+<select id="cakeSelect" name="cake_name" required>
+<option value="" disabled selected>-- Select a cake from above or choose here --</option>
+<option value="Doctor / Medical Theme Cake">Doctor / Medical Theme Cake</option>
+<option value="Haldi Ceremony Special Cake">Haldi Ceremony Special Cake</option>
+<option value="Monochromatic Pearl Cake">Monochromatic Pearl Cake</option>
+<option value="Spider-Man Kids Cake">Spider-Man Kids Cake</option>
+<option value="Double Barbie Doll Cake">Double Barbie Doll Cake</option>
+<option value="The Best Husband Tic-Tac-Toe Cake">The Best Husband Tic-Tac-Toe Cake</option>
+<option value="Happy Mother's Day Cake">Happy Mother's Day Cake</option>
+<option value="Romantic Couple Proposal Cake">Romantic Couple Proposal Cake</option>
+<option value="Boss Baby Theme Cake">Boss Baby Theme Cake</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Select Weight</label>
+<select name="cake_weight" required>
+<option value="1kg (2.2 Pounds)">1kg (2.2 Pounds)</option>
+<option value="2kg (4.4 Pounds)">2kg (4.4 Pounds)</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Your Name</label>
+<input type="text" name="customer_name" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" name="customer_phone" placeholder="Enter phone number" required>
+</div>
+
+<div class="form-group">
+<label>Delivery Date</label>
+<input type="date" name="delivery_date" required>
+</div>
+
+<div class="form-group full-width">
+<label>Delivery Address in Gajraula / Notes</label>
+<input type="text" name="address" placeholder="Enter your Gajraula address or message on cake" required>
+</div>
+
+<button type="submit" class="submit-btn">Place Order</button>
+</form>
+</div>
 </section>
 
 <section id="about">
